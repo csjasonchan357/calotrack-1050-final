@@ -25,7 +25,7 @@ def description2():
         style={'paddingLeft': '5%', 'paddingRight': '5%', 'marginTop': 50, 'marginBottom': 25})])
 
 def food_plan():
-    df = shuffle(get_all_food_data().drop_duplicates())
+    df = shuffle(get_all_food_data(True).drop_duplicates())
     data = df.to_dict('records')
     return html.Div([
         dash_table.DataTable(
