@@ -1,2 +1,9 @@
+to activate:
+source /calotrack_venv/bin/activate
+
 https://janakiev.com/blog/jupyter-virtual-envs/
 https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+
+
+Source on how python packages and virtual environments interact with jupyter notebook
+https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
