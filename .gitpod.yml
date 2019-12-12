@@ -1,0 +1,9 @@
+ports:
+  - port: 5000
+  - port: 8080
+  - port: 27017
+  - port: 8888
+  - port: 1050
+tasks:
+  - command: pip3 install --upgrade google-cloud-bigquery[bqstorage,pandas]
+  - command: pip3 install -r requirements.txt && (python3 database.py & python3 app.py)

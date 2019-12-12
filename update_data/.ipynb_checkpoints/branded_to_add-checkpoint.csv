@@ -1,0 +1,21 @@
+food_name,brand_name_item_name,brand_name,serving_unit,serving_qty,nf_calories
+Sprite Tropical,Sprite Sprite Tropical,Sprite,bottle,1,240.0
+Sprite,Sprite Sprite,Sprite,can,1,90.0
+Soda,Sprite Soda,Sprite,can,1,140.0
+Lemon-Lime Soda,Sprite Lemon-Lime Soda,Sprite,bottle,1,240.0
+Cranberry,Sprite Cranberry,Sprite,can,1,140.0
+Sprite - Large,Burgerville Sprite - Large,Burgerville,fl oz,32,300.0
+"Sprite, Kids","Grandy's Sprite, Kids",Grandy's,fl oz,12,150.0
+"Sprite, Large","Wendy's Sprite, Large",Wendy's,drink,1,390.0
+"Sprite, Medium","Chester's Sprite, Medium",Chester's,fl oz,22,260.0
+"Sprite, Regular","Smashburger Sprite, Regular",Smashburger,Serving,1,260.0
+"Sprite, Small","Chester's Sprite, Small",Chester's,fl oz,16,190.0
+"Fountain, Sprite","Abuelo's Fountain, Sprite",Abuelo's,Serving,1,130.0
+"Soda, Zero","Sprite Soda, Zero",Sprite,ml,355,3.559999942779541
+Sprite - Regular,Mooyah Sprite - Regular,Mooyah,fl oz,20,230.0
+Lime Soda,Sprite Lime Soda,Sprite,can,1,140.0
+Real Sprite,BurgerFi Real Sprite,BurgerFi,serving,1,160.0
+"Soda, Citrus","Sprite Soda, Citrus",Sprite,can,1,90.0
+Sprite Can,Goodcents Sprite Can,Goodcents,can,1,150.0
+Sprite - Small,Burgerville Sprite - Small,Burgerville,fl oz,12,110.0
+Kid's Sprite,TGI Friday's Kid's Sprite,TGI Friday's,serving,1,120.0
