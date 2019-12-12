@@ -53,6 +53,7 @@ def get_data_cache(allow_cached=False):
         eresults = equery_job.result()
         edf = eresults.to_dataframe()
         edf = edf[edf['name'] != 'name']
+        edf['name'].replace({'hip adduction': 'hip abduction'}, inplace=True)
         
         return bdf, cdf, edf
     
@@ -66,8 +67,8 @@ def get_data_cache(allow_cached=False):
     _fetch_cache['cache'] = ret
     return ret  
     
-def get_all_food_data():
-    df = get_data_cache(allow_cached=True)
+def get_all_food_data(allow_cached=False):
+    df = get_data_cache(allow_cached)
     
     btemp = df[0][['food_name', 'brand_name', 'serving_unit', 'serving_qty', 'nf_calories']]
     ctemp = df[1][['food_name', 'serving_unit', 'serving_qty', 'nf_calories']]
@@ -78,6 +79,3 @@ def get_all_food_data():
     newdf = newdf[['food_name', 'brand_name', 'serving_unit', 'serving_qty', 'nf_calories']]
 
     return newdf
-
-
-
