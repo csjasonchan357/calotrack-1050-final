@@ -28,9 +28,9 @@ def description():
         })])
 
 def food_log():
-    df = shuffle(get_all_food_data())
-    #data = df.to_dict('records')
+    df = shuffle(get_all_food_data(False))
     opts = df['food_name'].unique()
+    #data = df.to_dict('records')
     return html.Div([
         dash_table.DataTable(
             id='foods-table',
@@ -72,10 +72,12 @@ def food_log():
         html.Div([dcc.Dropdown(
             id='food-log',
             options=[{'label': i, 'value': i} for i in opts],
-            placeholder="Select a food")]),
+            placeholder="Select a food")], 
+            style={'margin-left': '11%', 'color': '#274228', 'width': '80%'}),
         html.Div([html.Button('Add Food',
             id='adding-food-button',
-            n_clicks=0)])],
+            n_clicks=0)], 
+            style={'margin-left': '11%', 'display': 'inline-block', 'color': '#274228'})],
         style={'width': '48%', 'display': 'inline-block'})
 
 def exer_log():
@@ -125,11 +127,11 @@ def exer_log():
             id='exer-log',
             options=[{'label': i, 'value': i} for i in opts],
             placeholder="Select an exercise")],
-            style={'margin-left': '8%', 'color': '#274228'}),
+            style={'margin-left': '17%', 'color': '#274228'}),
         html.Div([html.Button('Add Exercise',
             id='adding-exercise-button',
             n_clicks=0)], 
-            style={'margin-left': '8%', 
+            style={'margin-left': '17%', 
             'display': 'inline-block', 'color': '#274228', 'fontColor': '#A9BA9C'})], 
         style={'width': '48%', 'display': 'inline-block'})
 
@@ -167,8 +169,8 @@ def dynamic_layout():
         exer_log(),
         html.Br(),
         html.Br(),
-        dcc.Markdown('''Couldn't find a food? Try searching the API with the name of a food, exercise,
-        or a list of either separated by a common and space (and please be patient)! Foods go in the
+        dcc.Markdown('''Couldn't find what you were looking for? Try searching the API with the name of a food,
+        exercise,or a list of either separated by a common and space (and please be patient)! Foods go in the
         left search bar, and exercises on the right.''', style={'paddingLeft': '5%', 'paddingRight': '5%'}),
         food_search(),
         exer_search(),
@@ -191,7 +193,7 @@ layout = dynamic_layout()
     State('foods-table', 'columns')])
 def update_food_row(n_clicks, serving, food, rows, columns):
     
-    df = get_all_food_data()
+    df = get_all_food_data(True)
     info = df[df['food_name']==food]
 
     def add_row(r): 
@@ -320,8 +322,11 @@ def display_output(frows, erows, fcols, ecols):
     [State('food-search', 'value')]
 )
 def foodapi(click, term):
-    hits = ETL.user_food_query(term)
-    return u'Your query returned {} results!'.format(hits)
+    if click == 0: 
+        return 
+    else: 
+        hits = ETL.user_food_query(term)
+        return u'Your query returned {} results!'.format(hits)
 
 @app.callback(
     Output('exer-output', 'children'), 
@@ -329,8 +334,29 @@ def foodapi(click, term):
     [State('exer-name-search', 'value')]
 )
 def exerapi(click, term):
-    hits = ETL.user_exercise_query(term)
-    return u'Your query returned {} results!'.format(hits)
+    if click == 0: 
+        return 
+    else: 
+        hits = ETL.user_exercise_query(term)
+        return u'Your query returned {} results!'.format(hits)
+
+@app.callback(
+    Output('exer-log', 'options'), 
+    [Input('exer-output', 'children')]
+)
+def update_exer_drop(refresh):
+    df = shuffle(get_data_cache()[2])
+    opts = df['name'].unique()
+    return [{'label': i, 'value': i} for i in opts]
+
+@app.callback(
+    Output('food-log', 'options'), 
+    [Input('food-output', 'children')]
+)
+def update_food_drop(refresh):
+    df = shuffle(get_all_food_data(False))
+    opts = df['food_name'].unique()
+    return [{'label': i, 'value': i} for i in opts]
 
 # if __name__ == '__main__':
 #     app.run_server(debug=True, port=1050, host='0.0.0.0')
