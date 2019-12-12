@@ -59,6 +59,7 @@ layout = html.Div([
     html.Br(),
     dcc.Link('And click here to check out our food and exercise explorer!', href='/apps/app2', 
         style={'margin-left': '35%', 'color': '#274228'}), 
+    html.Br(), 
     html.Br()
     ])
 

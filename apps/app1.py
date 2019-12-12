@@ -165,6 +165,8 @@ def dynamic_layout():
     return html.Div([
         description(),
         dcc.Graph(id='log-graph', style={'width': '90%', 'margin-left': '5%', 'margin-right': '5%'}),
+        html.Br(),
+        html.Br(),
         food_log(),
         exer_log(),
         html.Br(),

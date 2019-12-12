@@ -117,6 +117,7 @@ def dynamic_layout():
     return html.Div([
         description2(),
         dcc.Graph(id='graph-output', style={'width': '90%', 'margin-left': '5%', 'margin-right': '5%'}),
+        html.Br(),
         food_plan(),
         exer_plan(), 
         dcc.Link('Return Home', href='/app', 

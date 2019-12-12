@@ -20,7 +20,7 @@ def about():
     a CaloPlanner app which allows users to plan out their caloric intake throughout the day. Users can search by 
     food groups, filter by calories, as well as search and filter exercises. At the end of this project, we hope 
     users will have a better sense of their nutritional intake, as well as some ideas as to how they can change 
-    their diet and exercise habits to reflect their personal goals and interests. \\\\
+    their diet and exercise habits to reflect their personal goals and interests.
 
     #### Datasets, Nutritionix API
     We are using two nutrition and exercise datasets using the Nutritionix API (a nutrition app). The nutrition 
@@ -91,8 +91,9 @@ def about():
     the above process repeats.
 
     #### Final Technology Stack''', style={'paddingLeft': '5%', 'paddingRight': '5%', 'margin-top': '50px'}),
-    html.Img(src = "/assets/techstack.jpg", style={'textAlign': 'center'}),
-    dcc.Markdown('''#### Code Links
+    html.Img(src = "/assets/techstack.png", style={'textAlign': 'center', 'width': '660px', 'margin-left': '22%'}),
+    dcc.Markdown('''
+    #### Code Links
     In the following links, you will find static versions of our ETL python code, which shows how our data was initially
     obtained, how we created our tables, integrated with GCP BigQuery, and how our code interacts with new user queries
     to update our database.
@@ -114,4 +115,6 @@ def about():
     * [CaloPlanner App Code](https://github.com/csjasonchan357/calotrack-1050-final/blob/master/apps/app2.py)''', 
     style={'paddingLeft': '5%', 'paddingRight': '5%','margin-bottom': '25px'})])
 
-layout = html.Div([about()])
+layout = html.Div([about(), 
+        dcc.Link('Return Home', href='/app', 
+        style={'color': '#274228'})])

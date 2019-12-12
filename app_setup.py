@@ -12,4 +12,5 @@ from database import get_data_cache, get_all_food_data
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', '/assets/style.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.config.suppress_callback_exceptions = True
-colors = ['#000000', '#FC6D41', '#274228', '#274228', '#7FB800', '#955E42', '#000000', '#F0A202', '#706C61', '#65743A']
+colors = ['#000000', '#FC6D41', '#274228', '#7FB800', '#955E42', 
+    '#14281D', '#F0A202', '#706C61', '#65743A', '#591610']

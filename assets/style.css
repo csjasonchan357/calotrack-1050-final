@@ -4,7 +4,7 @@ body{
     font-family: "Open Sans", sans-serif;
     font-weight: 200;
     color: #274228;
-    background-color: white;
+    background-color: #e0eadcff;
 }
 
 #content {
@@ -19,7 +19,7 @@ link{
 
 hr{
     height: 1px;
-    background-color: white;
+    background-color: #e0eadcff;
     border: 0;
     margin: 0 0 6% 0;
 }
