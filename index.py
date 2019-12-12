@@ -51,7 +51,10 @@ def about():
 
 layout = html.Div([
     about(), 
-    dcc.Link('Click here to check out our calorie logger...', href='/apps/app1', 
+    dcc.Link('Click here to read more about our project...', href='/about', 
+        style={'margin-left': '40%', 'color': '#274228'}),
+    html.Br(),
+    dcc.Link('click here to check out our calorie logger...', href='/apps/app1', 
         style={'margin-left': '40%', 'color': '#274228'}),
     html.Br(),
     dcc.Link('And click here to check out our food and exercise explorer!', href='/apps/app2', 

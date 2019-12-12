@@ -24,6 +24,7 @@ import plotly.graph_objects as go
 from app_setup import app
 from apps import app1, app2
 import index
+import aboutpage
 
 from database import get_data_cache, get_all_food_data
 
@@ -36,6 +37,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/app':
         return index.layout
+    elif pathname == '/about':
+        return aboutpage.layout
     elif pathname == '/apps/app1':
         return app1.layout
     elif pathname == '/apps/app2':
