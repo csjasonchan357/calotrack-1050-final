@@ -1,0 +1,2 @@
+https://janakiev.com/blog/jupyter-virtual-envs/
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
